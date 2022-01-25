@@ -8,8 +8,8 @@ node{
     
     stage('Run Docker Compose File')
     {
-        bat 'docker-compose build'
-        bat 'docker-compose up -d'
+        sh 'sudo docker-compose build'
+        sh 'sudo docker-compose up -d'
     }
   stage('PUSH image to Docker Hub')
     {
@@ -21,10 +21,10 @@ node{
         */
         //docker.withRegistry( 'https://registry.hub.docker.com', 'DockerHubPassword' ) {
              
-             bat 'docker login -u "neevrathod" -p "Neev@111" docker.io'
+             sh 'docker login -u "neevrathod" -p "Neev@111" docker.io'
              //sh 'sudo docker push upasanatestdocker/mysql'
              //sh 'sudo docker push upasanatestdocker/job1_web1.0'
-             bat 'docker push neevrathod/job1_web2.0'
+             sh 'docker push neevrathod/job1_web2.0'
             // sh 'docker push upasanatestdocker/mysql'
           
     }
