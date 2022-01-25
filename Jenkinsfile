@@ -8,8 +8,7 @@ node{
     
     stage('Run Docker Compose File')
     {
-        sh 'sudo apt-get clean'
-        sh 'sudo apt-get update'
+       
         sh 'sudo docker-compose build'
         sh 'sudo docker-compose up -d'
     }
